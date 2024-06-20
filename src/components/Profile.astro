@@ -1,0 +1,36 @@
+---
+import { Image } from "astro:assets";
+---
+
+<section>
+    <Image
+        src="/img/foto-perfil.webp"
+        alt="Foto de Perfil"
+        width={300}
+        height={300}
+        format="webp"
+        quality={100}
+        loading="eager"
+
+    />
+
+    <style>
+        section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        img {
+            border-radius: 2rem;
+        }
+    </style>
+</section>
+
+<style>
+    section {
+        display: grid;
+        grid-area: profile;
+    }
+</style>

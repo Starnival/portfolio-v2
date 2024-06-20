@@ -1,0 +1,130 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+<style is:global>
+	:root {
+		--accent-light: 255, 255, 255;
+		--accent-dark-title:#04001f;
+		--accent-dark: rgb(255, 255, 255); 
+	}
+
+	@font-face {
+		font-family: Montserrat-Alternates;
+		src: url("/fonts/Montserrat_Alternates/MontserratAlternates-Black.ttf");
+	}
+	@font-face {
+		font-family: PT_Sans_Caption;
+		src: url("/fonts/PT_Sans_Caption/PTSansCaption-Regular.ttf");
+	}
+	@font-face {
+		font-family: Yantramanav;
+		src: url("/fonts/Yantramanav/Yantramanav-Medium.ttf");
+	}
+	@font-face {
+		font-family: Mouldy;
+		src: url("/fonts/MouldyCheeseRegular-WyMWG.ttf");
+	}
+
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	*,
+	*::before,
+	*::after {
+		box-sizing: border-box;
+	}
+
+	body {
+		max-width: 1024px;
+		min-width: 360px;
+
+		min-height: 100dvh;
+
+		margin: auto;
+		padding: 1rem;
+	}
+
+	input,
+	button,
+	textarea,
+	select {
+		font: inherit;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		text-wrap: balance;
+		font-family: Monsserrat-Alternates;
+	}
+	
+	h1 {
+		font-size: 2.5rem;
+		font-family: Mouldy;
+	}
+
+	h2 {
+		font-size: 1.5rem;
+	}
+
+	h3 {
+		font-size: 1rem;
+	}
+
+	h4 {
+		font-size: 1rem;
+	}
+
+	p {
+		font-size: 1rem;
+		line-height: 1.75rem;
+		text-wrap: pretty;
+		font-family: PT_Sans_Caption;
+
+
+	}
+
+	img,
+	video,
+	svg {
+		height: auto;
+		max-width: 100%;
+	}
+
+	@media (prefers-reduce-motion: reduce) {
+		*,
+		*::before,
+		*::after {
+			animation-duration: 0.1ms !important;
+			animation-iteration-count: 1 !important;
+			transition-duration: 0.1ms !important;
+			scroll-behavior: auto !important;
+			transition: none;
+		}
+	}
+
+
+</style>

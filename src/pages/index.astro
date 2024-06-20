@@ -1,16 +1,70 @@
 ---
-
+import About from "../components/About.astro";
+import Contact from "../components/Contact.astro";
+import Name from "../components/Name.astro";
+import Profile from "../components/Profile.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Josue Noriega</h1>
-	</body>
-</html>
+<Layout title="Josue Noriega - Portfolio">
+	<main>
+
+		<section>
+			<Name />
+		</section>
+
+		<Profile />
+
+		<section>
+			<About />
+		</section>
+
+		<section>
+			<Contact />
+		</section>
+		
+	</main>
+</Layout>
+
+<style>
+	body {
+		background-color: #000000;
+		color: #e5ebf0;
+	}
+
+	main {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-areas:
+			"name profile"
+			"none profile"
+			"about about"
+		;
+
+	}
+
+	section {
+        background-color: #1a1a1a;
+        padding: 2rem;
+        border-radius: 2rem;
+
+        width: fit-content;
+    }
+
+	@media (prefers-color-scheme: dark) {
+		body {
+		}
+	}
+
+	/* Medium (md) - >= 768px */
+	@media (min-width: 768px) {
+	}
+
+	/* Small (sm) - >= 640px */
+	@media (min-width: 640px) {
+	}
+
+	/* Mobile (xs) - < 640px */
+	@media (max-width: 640px) {
+	}
+</style>
