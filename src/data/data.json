@@ -1,0 +1,43 @@
+{
+    "experience": [
+        {
+            "date": "2023",
+            "position": "Frontend Developer",
+            "company": "Freelance"
+        },
+        {
+            "date": "2022",
+            "position": "Frontend Developer",
+            "company": "Grupo de Desarrollo de Software"
+        }
+    ],
+
+    "projects": [
+        {
+            "name": "Portfolio",
+            "description": "Portfolio creado con Astro.",
+            "link": "https://github.com/withastro/astro",
+            "image": "/img/foto-perfil.webp"
+        },
+        {
+            "name": "Blog",
+            "description": "Blog creado con Astro.",
+            "link": "https://github.com/withastro/astro",
+            "image": "/img/foto-perfil.webp"
+        },
+        {
+            "name": "Task Manager",
+            "description": "Task Manager creado con Astro.",
+            "link": "https://github.com/withastro/astro",
+            "image": "/img/foto-perfil.webp"
+        },
+        {
+            "name": "Landing Page",
+            "description": "Landing Page creado con Astro.",
+            "link": "https://github.com/withastro/astro",
+            "image": "/img/foto-perfil.webp"
+        }
+
+    ]
+
+}

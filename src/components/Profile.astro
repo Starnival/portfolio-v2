@@ -2,35 +2,35 @@
 import { Image } from "astro:assets";
 ---
 
-<section>
-    <Image
-        src="/img/foto-perfil.webp"
-        alt="Foto de Perfil"
-        width={300}
-        height={300}
-        format="webp"
-        quality={100}
-        loading="eager"
+<Image
+    src="/img/foto-perfil.webp"
+    alt="Foto de Perfil"
+    width={200}
+    height={200}
+    format="webp"
+    quality={100}
+    loading="eager"
 
-    />
+    class="profile-image"
 
-    <style>
-        section {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
+/>
 
-        img {
-            border-radius: 2rem;
-        }
-    </style>
-</section>
 
 <style>
-    section {
-        display: grid;
-        grid-area: profile;
+
+    .profile-image {
+        border-radius: 2rem;
+
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+        transition: transform 0.3s ease-in-out;
+        cursor: pointer;
+
+        &:hover {
+            transform: scale(1.1);
+        }
     }
+    
 </style>

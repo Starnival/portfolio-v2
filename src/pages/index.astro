@@ -1,26 +1,47 @@
 ---
 import About from "../components/About.astro";
 import Contact from "../components/Contact.astro";
+import Experience from "../components/Experience.astro";
 import Name from "../components/Name.astro";
 import Profile from "../components/Profile.astro";
+import Project from "../components/Project.astro";
 import Layout from "../layouts/Layout.astro";
+
 ---
 
 <Layout title="Josue Noriega - Portfolio">
 	<main>
 
-		<section>
-			<Name />
+		<section class="hero">
+			<div class="hero-header container">
+				<div class= "name">
+					<Name />
+				</div>
+		
+				<div class="contact" >
+					<Contact />
+				</div>
+			</div>
+
+			<div class="profile">
+				<Profile />
+			</div>
 		</section>
 
-		<Profile />
-
-		<section>
-			<About />
+		
+		
+		<section class="professional">
+			<div class="container about">
+				<About />
+			</div>
+	
+			<div class="container experience">
+				<Experience />
+			</div>
 		</section>
 
-		<section>
-			<Contact />
+		<section class="container projects">
+			<Project />
 		</section>
 		
 	</main>
@@ -33,24 +54,82 @@ import Layout from "../layouts/Layout.astro";
 	}
 
 	main {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		grid-template-areas:
-			"name profile"
-			"none profile"
-			"about about"
-		;
+		width: 100%;
+		height: calc(100dvh - 4rem);
+
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		gap: 0.2rem;
+
+
+		.hero {
+			display: flex;
+			width: 100%;
+			height: fit-content;
+
+			gap: 0.2rem;
+
+
+			.hero-header {
+				display: flex;
+				flex-direction: column;
+				flex: 70%;
+    			justify-content: space-between;
+
+				padding-top: 4rem;
+
+				
+				.name {
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+				}
+
+				.contact {
+					display: flex;
+					justify-content: flex-end;
+					align-items: flex-end;
+				}
+			}
+
+			.profile {
+				display: flex;
+				flex: 30%;
+			}
+
+
+		}
+
+		.professional {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 0.2rem;
+		}
+
+		.projects {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 0.2rem;
+		}
+	}
+
+	.container {
+		background-color: #1a1a1a;
+		padding: 2rem;
+		border-radius: 2rem;
+
+		width: 100%;
+		height: 100%;
 
 	}
 
-	section {
-        background-color: #1a1a1a;
-        padding: 2rem;
-        border-radius: 2rem;
-
-        width: fit-content;
-    }
-
+	
 	@media (prefers-color-scheme: dark) {
 		body {
 		}

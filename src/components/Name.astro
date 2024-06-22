@@ -1,20 +1,133 @@
 ---
-
+const texts = ["FrontEnd", "BackEnd", "FullStack"];
 ---
 
 <div class="name">
     <h1>Josue Noriega</h1>
-    <h2>Frontend Developer</h2>
+    <div class="slider">
+        <div class="caption">
+            Desarrollador
+            <div class="text-box">
+                {texts.map((text, index) => <div>{text}</div>)}
+            </div>
+        </div>
+    </div>
 </div>
 
 <style>
-    div {
-        display: grid;
-        grid-area: name;
-        
+    .name {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+
+        h1 {
+            font-size: 3rem;
+            color: #67a6da;
+        }
     }
 
-    h1 {
-        color: #b1c8db;
+    .slider {
+
+        .caption {
+            font-size: 1.5rem;
+            color: #fff;
+            position: relative;
+            display: inline-block;
+            text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
+
+            .text-box {
+                display: inline-block;
+                position: relative;
+                vertical-align: top;
+
+                div {
+                    display: inline-block;
+                    position: absolute;
+                    top: -200px;
+                    transform: rotateX(-90deg);
+                    opacity: 0;
+                    color: #67a6da;
+                    text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
+                    animation-timing-function: ease-in;
+
+                    &:nth-child(1) {
+                        animation: rollDown 7s forwards infinite;
+                    }
+                    &:nth-child(2) {
+                        animation: rollDown2 7s forwards infinite;
+                    }
+                    &:nth-child(3) {
+                        animation: rollDown3 7s forwards infinite;
+                    }
+                }
+            }
+        }
+    }
+    @keyframes rollDown {
+        0% {
+            top: -1rem;
+            transform: rotateX(-90deg);
+        }
+        11% {
+            top: 0;
+            transform: rotateX(0deg);
+            opacity: 1;
+        }
+        22% {
+            top: 0;
+            transform: rotateX(0deg);
+            opacity: 1;
+        }
+        33% {
+            top: 1rem;
+            transform: rotateX(90deg);
+            opacity: 0;
+        }
+    }
+
+    @keyframes rollDown2 {
+        33% {
+            top: -1rem;
+            transform: rotateX(-90deg);
+        }
+        44% {
+            top: 0;
+            transform: rotateX(0deg);
+            opacity: 1;
+        }
+        55% {
+            top: 0;
+            transform: rotateX(0deg);
+            opacity: 1;
+        }
+        66% {
+            top: 1rem;
+            transform: rotateX(90deg);
+            opacity: 0;
+        }
+    }
+
+    @keyframes rollDown3 {
+        66% {
+            top: -1rem;
+            transform: rotateX(-90deg);
+        }
+        77% {
+            top: 0;
+            transform: rotateX(0deg);
+            opacity: 1;
+        }
+        88% {
+            top: 0;
+            transform: rotateX(0deg);
+            opacity: 1;
+        }
+        99% {
+            top: 1rem;
+            transform: rotateX(90deg);
+            opacity: 0;
+        }
     }
 </style>
+

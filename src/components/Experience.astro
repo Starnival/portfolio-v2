@@ -1,0 +1,49 @@
+---
+import { experience } from "../data/data.json";
+---
+
+<article>
+    <h2>Experiencia</h2>
+    <div class="timeline">
+        <div class="timeline-item">
+            {
+                experience.map((exp) => (
+                    <div>
+                        <p>{exp.date}</p>
+                        <h3>{exp.position}</h3>
+                        <h4>{exp.company}</h4>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</article>
+
+<style>
+    article {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        gap: 1rem;
+    }
+
+    .timeline {
+        width: 100%;
+        display: flex;
+        justify-self: center;
+        align-items: center;
+        gap: 1rem;
+        
+
+        .timeline-item {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            gap: 1rem;
+        }
+    }
+
+    
+</style>

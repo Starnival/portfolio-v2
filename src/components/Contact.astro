@@ -1,18 +1,18 @@
 ---
-import FacebookIcon from "../../public/icons/facebook.astro";
-import GithubIcon from "../../public/icons/github.astro";
-import LinkedinIcon from "../../public/icons/linkedin.astro";
-import TwitterIcon from "../../public/icons/twitter.astro";
+import FacebookIcon from "../../public/icons/Facebook.astro";
+import GithubIcon from "../../public/icons/Github.astro";
+import LinkedinIcon from "../../public/icons/Linkedin.astro";
+import TwitterIcon from "../../public/icons/Twitter.astro";
 ---
 
-<div class="contact">
+<div>
     <a
         href="https://josuendev.netlify.app/"
         aria-label="Enlace a mi pagina en Facebook"
         target="_blank"
         rel="noopener noreferrer"
     >
-        <FacebookIcon customClass="icon" />
+        <FacebookIcon class="icon"/>
     </a>
     <a
         href="https://josuendev.netlify.app/"
@@ -20,7 +20,7 @@ import TwitterIcon from "../../public/icons/twitter.astro";
         target="_blank"
         rel="noopener noreferrer"
     >
-        <GithubIcon customClass="icon" />
+        <GithubIcon class="icon" />
     </a>
     <a
         href="https://josuendev.netlify.app/"
@@ -28,7 +28,7 @@ import TwitterIcon from "../../public/icons/twitter.astro";
         target="_blank"
         rel="noopener noreferrer"
     >
-        <LinkedinIcon customClass="icon" />
+        <LinkedinIcon class="icon" />
     </a>
     <a
         href="https://josuendev.netlify.app/"
@@ -36,6 +36,36 @@ import TwitterIcon from "../../public/icons/twitter.astro";
         target="_blank"
         rel="noopener noreferrer"
     >
-        <TwitterIcon customClass="icon" />
+        <TwitterIcon class="icon" />
     </a>
 </div>
+
+<style>
+    div {
+        display: grid;
+        grid-area: contact;
+
+        grid-auto-flow: column;
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
+
+        .icon {
+            width: 1.75rem;
+            height: 1.75rem;
+            color: #258ce0;
+            padding: .25rem;
+            border: 1px solid #67a6da33;
+            border-radius: .5rem;
+
+            &:hover {
+                color: #67a6da96;
+                border-color: #258ce0;
+            }
+        }
+    }
+
+    
+
+    
+</style>
